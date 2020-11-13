@@ -1,12 +1,35 @@
 title Student Registration
 component Student [0.95,0.5]
-note Wants to Register [.95, .55]
+note - Wants to Register [.97, .61]
 
-component SSB8 [0.85, 0.42]
-Student +> SSB8
+component MyUSF [.85, .3]
+component CAS [.8, .5]
+component MIM [.8, .6]
+component SSB8 [0.65, 0.44]
+component Student Self Service [.55,.44]
+component SSO Manager [.73,.55]
+component Web Tailor [.7, .85]
+component Server [.35,.85]
+component DB [.2,.95]
+component DB Server [.1, .8]
+component College Scheduler [.6,.55]
+component SaaS [.5,.75]
 
-component CollegeScheduler [.8,.58]
-Student +> CollegeScheduler
+Student +> MyUSF
+MyUSF +> CAS
+MyUSF +> MIM
+CAS +> MIM
+SSB8 +> SSO Manager
+SSO Manager +> CAS
+SSO Manager +> MIM
+SSO Manager +> Web Tailor
+SSB8 +> Student Self Service
+Student Self Service +> College Scheduler
+Web Tailor +> DB
+Student Self Service +> Server
+Student Self Service +> DB
+DB +> DB Server
+College Scheduler +> SaaS
 SSB8 +> CollegeScheduler
 
 
